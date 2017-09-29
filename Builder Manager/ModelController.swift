@@ -28,6 +28,7 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
         // Create the data model.
         let dateFormatter = DateFormatter()
         pageData = dateFormatter.monthSymbols
+        pageData = ["Builder 1","Builder 2","Builder 3","Builder 4","Builder 5"]
     }
 
     func viewControllerAtIndex(_ index: Int, storyboard: UIStoryboard) -> DataViewController? {
