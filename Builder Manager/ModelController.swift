@@ -9,7 +9,7 @@
 import UIKit
 
 /*
- A controller object that manages a simple model -- a collection of month names.
+ A controller object that manages a simple model -- a collection of builders.
  
  The controller serves as the data source for the page view controller; it therefore implements pageViewController:viewControllerBeforeViewController: and pageViewController:viewControllerAfterViewController:.
  It also implements a custom method, viewControllerAtIndex: which is useful in the implementation of the data source methods, and in the initial configuration of the application.
@@ -28,7 +28,7 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
         // Create the data model.
         let dateFormatter = DateFormatter()
         pageData = dateFormatter.monthSymbols
-        pageData = ["Builder 1","Builder 2","Builder 3","Builder 4","Builder 5"]
+        pageData = ["Pilgrim","Peregrino","Peregrine","MindPilgrim"]
     }
 
     func viewControllerAtIndex(_ index: Int, storyboard: UIStoryboard) -> DataViewController? {

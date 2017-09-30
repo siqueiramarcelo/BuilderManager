@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C2F2FDE1F7FD05B00134078 /* BuilderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2F2FDD1F7FD05B00134078 /* BuilderTableViewCell.swift */; };
 		9CB655AE1F7E7D770007E68B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB655AD1F7E7D770007E68B /* AppDelegate.swift */; };
 		9CB655B01F7E7D770007E68B /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB655AF1F7E7D770007E68B /* RootViewController.swift */; };
 		9CB655B21F7E7D770007E68B /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB655B11F7E7D770007E68B /* DataViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C2F2FDD1F7FD05B00134078 /* BuilderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderTableViewCell.swift; sourceTree = "<group>"; };
 		9CB655AA1F7E7D770007E68B /* Builder Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Builder Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CB655AD1F7E7D770007E68B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CB655AF1F7E7D770007E68B /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -58,11 +60,12 @@
 		9CB655AC1F7E7D770007E68B /* Builder Manager */ = {
 			isa = PBXGroup;
 			children = (
-				9CB655AD1F7E7D770007E68B /* AppDelegate.swift */,
+				9CB655B51F7E7D770007E68B /* Main.storyboard */,
 				9CB655AF1F7E7D770007E68B /* RootViewController.swift */,
 				9CB655B11F7E7D770007E68B /* DataViewController.swift */,
 				9CB655B31F7E7D770007E68B /* ModelController.swift */,
-				9CB655B51F7E7D770007E68B /* Main.storyboard */,
+				9C2F2FDD1F7FD05B00134078 /* BuilderTableViewCell.swift */,
+				9CB655AD1F7E7D770007E68B /* AppDelegate.swift */,
 				9CB655B81F7E7D770007E68B /* Assets.xcassets */,
 				9CB655BA1F7E7D770007E68B /* LaunchScreen.storyboard */,
 				9CB655BD1F7E7D770007E68B /* Info.plist */,
@@ -146,6 +149,7 @@
 				9CB655B41F7E7D770007E68B /* ModelController.swift in Sources */,
 				9CB655B21F7E7D770007E68B /* DataViewController.swift in Sources */,
 				9CB655AE1F7E7D770007E68B /* AppDelegate.swift in Sources */,
+				9C2F2FDE1F7FD05B00134078 /* BuilderTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
