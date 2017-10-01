@@ -14,7 +14,6 @@ class DataViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var dataLabel: UILabel! // title label
     
     var dataObject: String = ""
-    var datePicker : UIDatePicker!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,20 +47,9 @@ class DataViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "builder", for: indexPath)
         
-        // Configure the cell...
+        //print("cell")
         
         return cell
-    }
-    
-    // picker
-    func doDatePicker(){
-        // DatePicker
-        self.datePicker = UIDatePicker(frame:CGRect(x: 40, y: 0, width: self.view.frame.size.width - 80, height: 200))
-        self.datePicker?.backgroundColor = UIColor.white
-        self.datePicker?.datePickerMode = UIDatePickerMode.countDownTimer
-        datePicker.center = view.center
-        view.addSubview(self.datePicker)        
-        
     }
     
 }
