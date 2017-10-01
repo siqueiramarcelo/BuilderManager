@@ -10,15 +10,13 @@ import UIKit
 
 class BuilderTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var timePicker: UIDatePicker!
-    @IBOutlet weak var countdownLabel: UILabel!
+
     @IBOutlet weak var startButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         self.backgroundColor = UIColor(red: 25/255, green: 41/255, blue: 23/255, alpha: 1)
-        timePicker.backgroundColor = UIColor(red: 123/255, green: 150/255, blue: 123/255, alpha: 255/255)
         
     }
 
