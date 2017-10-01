@@ -53,33 +53,6 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="335" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="365" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Grf-xO-MU2">
-                                                            <rect key="frame" x="8" y="12" width="52" height="21"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="52" id="9PN-zB-FXK"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" red="0.48245714309999999" green="0.5890760867" blue="0.47919194129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="365" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bY6-pN-Nmo">
-                                                            <rect key="frame" x="60" y="11" width="52" height="21"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="52" id="MNw-Mi-CQF"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" red="0.48245714309999999" green="0.5890760867" blue="0.47919194129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="365" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DbU-Qn-rb7">
-                                                            <rect key="frame" x="112" y="11" width="52" height="21"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="52" id="U5S-YC-umG"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" red="0.48245714309999999" green="0.5890760867" blue="0.47919194129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lc5-Da-y5G">
                                                             <rect key="frame" x="247" y="6" width="80" height="30"/>
                                                             <constraints>
@@ -89,22 +62,40 @@
                                                                 <color key="titleColor" red="0.48245714309999999" green="0.5890760867" blue="0.47919194129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
                                                         </button>
+                                                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="365" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tlG-9D-x4D">
+                                                            <rect key="frame" x="8" y="6" width="35" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="textColor" red="0.48245714309999999" green="0.5890760867" blue="0.47919194129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
+                                                        </textField>
+                                                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="24" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZoG-gP-dwt">
+                                                            <rect key="frame" x="43" y="7" width="35" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="textColor" red="0.48245714309999999" green="0.5890760867" blue="0.47919194129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
+                                                        </textField>
+                                                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="60" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OLs-I7-pmF">
+                                                            <rect key="frame" x="78" y="7" width="35" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="textColor" red="0.48245714309999999" green="0.5890760867" blue="0.47919194129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
+                                                        </textField>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.097769117429999997" green="0.16234306000000001" blue="0.091794438820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstItem="Grf-xO-MU2" firstAttribute="leading" secondItem="oFg-Sz-ZI8" secondAttribute="leadingMargin" id="0t7-IA-6DK"/>
-                                                        <constraint firstItem="Lc5-Da-y5G" firstAttribute="centerY" secondItem="Grf-xO-MU2" secondAttribute="centerY" id="36N-Z9-QXb"/>
-                                                        <constraint firstItem="bY6-pN-Nmo" firstAttribute="leading" secondItem="Grf-xO-MU2" secondAttribute="trailing" id="B73-00-EhI"/>
-                                                        <constraint firstItem="DbU-Qn-rb7" firstAttribute="centerY" secondItem="Grf-xO-MU2" secondAttribute="centerY" id="Cr3-XP-9vt"/>
-                                                        <constraint firstItem="bY6-pN-Nmo" firstAttribute="centerY" secondItem="Grf-xO-MU2" secondAttribute="centerY" id="e6J-Cq-hdF"/>
-                                                        <constraint firstItem="DbU-Qn-rb7" firstAttribute="leading" secondItem="bY6-pN-Nmo" secondAttribute="trailing" id="ejf-US-Z14"/>
                                                         <constraint firstItem="Lc5-Da-y5G" firstAttribute="trailing" secondItem="oFg-Sz-ZI8" secondAttribute="trailingMargin" id="yTF-8I-Efp"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" red="0.097769117429999997" green="0.16234306000000001" blue="0.091794438820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <connections>
-                                                    <outlet property="startButton" destination="Lc5-Da-y5G" id="YyX-KY-CgV"/>
+                                                    <outlet property="daysField" destination="tlG-9D-x4D" id="Cka-wy-xpb"/>
+                                                    <outlet property="hoursField" destination="ZoG-gP-dwt" id="pX4-MG-AGh"/>
+                                                    <outlet property="minutesField" destination="OLs-I7-pmF" id="DSE-dk-dnB"/>
+                                                    <outlet property="startButton" destination="Lc5-Da-y5G" id="bgL-fL-OEv"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>

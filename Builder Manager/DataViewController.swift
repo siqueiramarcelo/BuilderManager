@@ -11,8 +11,8 @@ import UIKit
 class DataViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var builderTableView: UITableView!
+    @IBOutlet weak var dataLabel: UILabel! // title label
     
-    @IBOutlet weak var dataLabel: UILabel!
     var dataObject: String = ""
     var datePicker : UIDatePicker!
 

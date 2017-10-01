@@ -11,6 +11,9 @@ import UIKit
 class BuilderTableViewCell: UITableViewCell {
 
 
+    @IBOutlet weak var daysField: UITextField!
+    @IBOutlet weak var hoursField: UITextField!
+    @IBOutlet weak var minutesField: UITextField!
     @IBOutlet weak var startButton: UIButton!
     
     override func awakeFromNib() {
