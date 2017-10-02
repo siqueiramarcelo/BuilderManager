@@ -68,6 +68,11 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
             self.pageViewController!.setViewControllers(viewControllers, direction: .forward, animated: true, completion: {done in })
 
             self.pageViewController!.isDoubleSided = false
+            for recognizer in self.pageViewController!.gestureRecognizers {
+                if recognizer is UITapGestureRecognizer {
+                    recognizer.isEnabled = false
+                }
+            }
             return .min
         }
 

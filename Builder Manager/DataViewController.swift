@@ -43,7 +43,7 @@ class DataViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return 6
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -53,7 +53,10 @@ class DataViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.date = NSDate()
         cell.accountIndex = accountIndex
         cell.builderIndex = indexPath.row
-        
+        cell.deadlineKey = "deadline" + String(cell.accountIndex) + "_" + String(cell.builderIndex)
+        print(" ")
+        //print("deadlineKey ", cell.deadlineKey)
+        print(" ")
         return cell
     }
     

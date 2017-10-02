@@ -21,15 +21,13 @@ class BuilderTableViewCell: UITableViewCell {
     var date = NSDate()
     var timer: Timer?
     var deadline = 0
+    var deadlineKey = ""
 	let dateFormatterGet = DateFormatter()
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        startButton.addTarget(self, action: #selector(startCountDown), for: .touchUpInside)
-        let deadlineKey = "deadline" + String(accountIndex) + "_" + String(builderIndex)
-        print("deadline for builder ", builderIndex, " in account ", accountIndex, ": ", defaults.integer(forKey: deadlineKey))
-        //print("accountIndex: ", accountIndex)
+        startButton.addTarget(self, action: #selector(manageCountdown), for: .touchUpInside)
+        startButton.isExclusiveTouch = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -38,7 +36,19 @@ class BuilderTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    @objc func startCountDown(sender:UIButton) {
+    @objc func manageCountdown() {
+        
+        if startButton.isEnabled {
+            startButton.isEnabled = false
+            startButton.setTitle("Running", for: .normal)
+            startCountdown(sender: startButton)
+        }
+        
+    }
+    
+    @objc func startCountdown(sender:UIButton) {
+        
+        //print("deadlineKey: ", deadlineKey)
         
         var secondsToFinish:Double
         var totalSeconds = 0
@@ -101,6 +111,7 @@ class BuilderTableViewCell: UITableViewCell {
         secondsField.text = String(intSeconds)
         
         deadline -= 1
+        defaults.set(deadline, forKey: deadlineKey)
         
         if deadline == 1 {
             stopUpdating()            
@@ -112,7 +123,7 @@ class BuilderTableViewCell: UITableViewCell {
     
     func stopUpdating() {
         timer!.invalidate()
-
+        defaults.set(0, forKey: deadlineKey)
     }
     
 }
