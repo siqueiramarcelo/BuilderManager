@@ -10,14 +10,15 @@ import UIKit
 
 class BuilderTableViewCell: UITableViewCell {
 
-
     @IBOutlet weak var daysField: UITextField!
     @IBOutlet weak var hoursField: UITextField!
     @IBOutlet weak var minutesField: UITextField!
     @IBOutlet weak var secondsField: UITextField!
     @IBOutlet weak var startButton: UIButton!
     
-	var date = NSDate()
+	var accountIndex = 0
+    var builderIndex = 0
+    var date = NSDate()
     var timer: Timer?
     var deadline = 0
 	let dateFormatterGet = DateFormatter()
@@ -25,9 +26,10 @@ class BuilderTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        //self.backgroundColor = UIColor(red: 25/255, green: 41/255, blue: 23/255, alpha: 1)
         startButton.addTarget(self, action: #selector(startCountDown), for: .touchUpInside)
-        print("startButton: ", startButton)
+        let deadlineKey = "deadline" + String(accountIndex) + "_" + String(builderIndex)
+        print("deadline for builder ", builderIndex, " in account ", accountIndex, ": ", defaults.integer(forKey: deadlineKey))
+        //print("accountIndex: ", accountIndex)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

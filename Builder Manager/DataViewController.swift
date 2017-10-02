@@ -13,6 +13,7 @@ class DataViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var builderTableView: UITableView!
     @IBOutlet weak var dataLabel: UILabel! // title label
     
+    var accountIndex: Int = 0
     var dataObject: String = ""
 
     override func viewDidLoad() {
@@ -31,6 +32,7 @@ class DataViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.dataLabel!.text = dataObject
+        print("account: ", accountIndex)
     }
     
     // MARK: - Table view
@@ -45,9 +47,12 @@ class DataViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "builder", for: indexPath)
         
-        //print("cell")
+        let cell: BuilderTableViewCell = tableView.dequeueReusableCell(withIdentifier: "builder", for: indexPath) as! BuilderTableViewCell
+        
+        cell.date = NSDate()
+        cell.accountIndex = accountIndex
+        cell.builderIndex = indexPath.row
         
         return cell
     }

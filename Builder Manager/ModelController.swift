@@ -9,7 +9,7 @@
 import UIKit
 
 /*
- A controller object that manages a simple model -- a collection of builders.
+ A controller object that manages a simple model -- a collection of "builders".
  
  The controller serves as the data source for the page view controller; it therefore implements pageViewController:viewControllerBeforeViewController: and pageViewController:viewControllerAfterViewController:.
  It also implements a custom method, viewControllerAtIndex: which is useful in the implementation of the data source methods, and in the initial configuration of the application.
@@ -26,9 +26,29 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
     override init() {
         super.init()
         // Create the data model.
-        let dateFormatter = DateFormatter()
-        pageData = dateFormatter.monthSymbols
+        //let dateFormatter = DateFormatter()
+        //pageData = dateFormatter.monthSymbols
         pageData = ["Pilgrim","Peregrino","Peregrine","MindPilgrim"]
+        
+        // update user defaults
+        for i in (0..<pageData.count) {
+            
+            var deadlineNow = "deadline" + String(i) + "_0"
+            
+            if defaults.object(forKey: deadlineNow) == nil {
+                
+                for j in 0...4 {
+                    
+                    deadlineNow = deadlineNow + "_" + String(j)
+                    defaults.set(0, forKey: deadlineNow)
+                    
+                }
+                
+                defaults.synchronize()
+            }
+            
+        }
+        
     }
 
     func viewControllerAtIndex(_ index: Int, storyboard: UIStoryboard) -> DataViewController? {
@@ -39,7 +59,11 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
 
         // Create a new view controller and pass suitable data.
         let dataViewController = storyboard.instantiateViewController(withIdentifier: "DataViewController") as! DataViewController
+        
+        // pass data
+        dataViewController.accountIndex = index
         dataViewController.dataObject = self.pageData[index]
+        
         return dataViewController
     }
 
