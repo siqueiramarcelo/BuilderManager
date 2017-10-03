@@ -22,7 +22,6 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
 
     var pageData: [String] = []
 
-
     override init() {
         super.init()
         // Create the data model.
@@ -31,6 +30,9 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
         pageData = ["Pilgrim","Peregrino","Peregrine","MindPilgrim"]
         
         // update user defaults
+        let appDomain = Bundle.main.bundleIdentifier!
+        //UserDefaults.standard.removePersistentDomain(forName: appDomain)
+        
         for i in (0..<pageData.count) {
             
             var deadlineNow = "deadline" + String(i) + "_0"

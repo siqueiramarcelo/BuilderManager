@@ -43,21 +43,24 @@ class DataViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 6
+        return 7
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell: BuilderTableViewCell = tableView.dequeueReusableCell(withIdentifier: "builder", for: indexPath) as! BuilderTableViewCell
         
-        cell.date = NSDate()
         cell.accountIndex = accountIndex
         cell.builderIndex = indexPath.row
         cell.deadlineKey = "deadline" + String(cell.accountIndex) + "_" + String(cell.builderIndex)
+        cell.manageCountdown()        
+        
         print(" ")
         //print("deadlineKey ", cell.deadlineKey)
         print(" ")
+        
         return cell
+        
     }
     
 }
