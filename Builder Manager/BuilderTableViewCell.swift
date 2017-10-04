@@ -113,7 +113,7 @@ print("timer", builderTimer!, " invalidate on cell", deadlineKey)
         
         let doubleDays = timeToGo / 24 / 60 / 60
         let doubleRoundDays = floor(Double(doubleDays))
-        let intDays = Int(doubleRoundDays)
+        let intDays = Int(doubleDays)
         let daysOnlyInSeconds = intDays * 24 * 60 * 60
         
         let hoursTotalInSeconds = timeToGo - daysOnlyInSeconds
@@ -140,6 +140,7 @@ print("timer", builderTimer!, " invalidate on cell", deadlineKey)
 
             print("stopCountDown")
             print("updateTimer will call switchButton")
+            resetFields()
             switchButton(state: "Start")
 
             stopCountDown()
