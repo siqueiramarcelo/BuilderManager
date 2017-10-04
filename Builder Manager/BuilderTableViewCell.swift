@@ -55,7 +55,7 @@ print("called startCountDown")
         var secondsUntilNow = 0
         var totalSeconds = 0
         
-        resetFields()
+        fillEmptyFields()
 
         let buildingDays = Int(daysField.text!)! * 24 * 60 * 60
         let buildingHours = Int(hoursField.text!)! * 60 * 60
@@ -111,30 +111,25 @@ print("timer", builderTimer!, " invalidate on cell", deadlineKey)
         let currentTime = Int(currentDate.timeIntervalSince1970)
         let timeToGo = deadline - currentTime
         
-        let doubleDays = timeToGo / 24 / 60 / 60
-        let doubleRoundDays = floor(Double(doubleDays))
-        let intDays = Int(doubleDays)
-        let daysOnlyInSeconds = intDays * 24 * 60 * 60
+        let daysOnly = timeToGo / 24 / 60 / 60 // days
+        let daysOnlyInSeconds = daysOnly * 24 * 60 * 60 // days seconds
         
-        let hoursTotalInSeconds = timeToGo - daysOnlyInSeconds
-        let doubleHours = hoursTotalInSeconds / 60 / 60
-        let doubleRoundHours = floor(Double(doubleHours))
-        let intHours = Int(doubleRoundHours)
-        let hoursOnlyInSeconds = intHours * 60 * 60
+        let hoursTotalInSeconds = timeToGo - daysOnlyInSeconds // hours seconds
+        let hoursOnly = hoursTotalInSeconds / 60 / 60 // hours
+        let hoursOnlyInSeconds = hoursOnly * 60 * 60
         
         let minutesTotalInSeconds = hoursTotalInSeconds - hoursOnlyInSeconds
-        let doubleMinutes = minutesTotalInSeconds / 60
-        let doubleRoundMinutes = floor(Double(doubleMinutes))
-        let intMinutes = Int(doubleRoundMinutes)
-        let minutesOnlyInSeconds = intMinutes * 60
+        let minutesOnly = minutesTotalInSeconds / 60
+        let minutesOnlyInSeconds = minutesOnly * 60
         
-        let doubleSeconds = minutesTotalInSeconds - minutesOnlyInSeconds
-        let intSeconds = doubleSeconds >= 0 ? doubleSeconds : 0
+        let secondsOnly = minutesTotalInSeconds - minutesOnlyInSeconds
         
-        daysField.text = String(intDays)
-        hoursField.text = String(intHours)
-        minutesField.text = String(intMinutes)
-        secondsField.text = String(intSeconds)
+        //print("",daysOnly,":",hoursOnly,":",minutesOnly,":",secondsOnly)
+        
+        daysField.text = String(daysOnly)
+        hoursField.text = String(hoursOnly)
+        minutesField.text = String(minutesOnly)
+        secondsField.text = String(secondsOnly)
        
         if timeToGo < 1 {
 
@@ -162,11 +157,18 @@ print("timer", builderTimer!, " invalidate on cell", deadlineKey)
         
     }
     
-    func resetFields() {
+    func fillEmptyFields() {
         if daysField.text?.count == 0 {daysField.text = String(0)}
         if hoursField.text?.count == 0 {hoursField.text = String(0)}
         if minutesField.text?.count == 0 {minutesField.text = String(0)}
         if secondsField.text?.count == 0 {secondsField.text = String(0)}
+    }
+    
+    func resetFields() {
+        daysField.text = String(0)
+        hoursField.text = String(0)
+        minutesField.text = String(0)
+        secondsField.text = String(0)
     }
     
 }
